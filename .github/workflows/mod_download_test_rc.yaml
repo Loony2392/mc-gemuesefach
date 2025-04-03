@@ -1,4 +1,4 @@
-name: 🧪 Test All Mods for Fabric from mods.txt
+name: 🧪 Test All Mods for Fabric from mods.txt RC
 
 on:
   push:
