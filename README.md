@@ -20,7 +20,7 @@ Herzlich willkommen auf **Gemüsefach**, dem ultimativen Minecraft-Server für k
 - ✅ **3dskinlayers**
 - ✅ **appleskin**
 - ✅ **architectury-api**
-- 🔄 **balm**
+- ✅ **balm**
 - ✅ **betterf3**
 - ✅ **cardinal-components-api**
 - ✅ **chunky**
