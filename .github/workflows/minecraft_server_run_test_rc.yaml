@@ -1,0 +1,73 @@
+name: 🛠️ Test Minecraft Server with Mods RC
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+env:
+  MINECRAFT_VERSION: "1.21.5" # Minecraft-Version
+  FABRIC_LOADER_VERSION: "0.16.12" # Fabric-Loader-Version
+  FABRIC_LAUNCHER_VERSION: "1.0.3" # Fabric-Launcher-Version
+
+jobs:
+  test-minecraft-server:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 📂 Repository auschecken
+      - name: 📂 Checkout repository
+        uses: actions/checkout@v3
+
+      # ☕ Java 21 installieren
+      - name: ☕ Set up Java 21
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '21' # Minecraft benötigt Java 21
+
+      # 📂 Kopiere Mods aus dem Repository (ohne redundantes Kopieren)
+      - name: 📂 Copy Mods from Repository
+        run: |
+          mkdir -p mods
+          find ./mods -type f -name "*.jar" -exec cp {} ./mods/ \;
+
+      # ⬇️ Mods aus mods.txt herunterladen (nur für die angegebene Minecraft-Version)
+      - name: ⬇️ Download Mods for Minecraft ${{ env.MINECRAFT_VERSION }}
+        run: |
+          mkdir -p mods
+          echo "Downloading mods compatible with Minecraft ${{ env.MINECRAFT_VERSION }}..."
+          while IFS= read -r slug; do
+            if [ ! -z "$slug" ]; then
+              echo "Downloading mod: $slug for Minecraft ${{ env.MINECRAFT_VERSION }}"
+              curl -s "https://api.modrinth.com/v2/project/$slug/version" | jq -r '.[] | select(.game_versions[] | contains("${{ env.MINECRAFT_VERSION }}")) | select(.loaders[] | contains("fabric")) | .files[0].url' | xargs -n 1 curl -O -J
+              mv *.jar mods/
+            fi
+          done < mods.txt
+
+      # ⬇️ Download Fabric Server Launcher
+      - name: ⬇️ Download Fabric Server Launcher
+        run: |
+          curl -OJ https://meta.fabricmc.net/v2/versions/loader/${{ env.MINECRAFT_VERSION }}/${{ env.FABRIC_LOADER_VERSION }}/${{ env.FABRIC_LAUNCHER_VERSION }}/server/jar
+          mv fabric-server-mc.${{ env.MINECRAFT_VERSION }}-loader.${{ env.FABRIC_LOADER_VERSION }}-launcher.${{ env.FABRIC_LAUNCHER_VERSION }}.jar server.jar
+
+      # ✅ Accept Minecraft EULA
+      - name: ✅ Accept Minecraft EULA
+        run: echo "eula=true" > eula.txt
+
+      # 🚀 Server starten
+      - name: 🚀 Start Minecraft Server
+        run: |
+          java -Xmx2G -jar server.jar nogui &
+          sleep 30 # Warte, bis der Server vollständig gestartet ist
+
+      # ✅ Überprüfen, ob der Server läuft
+      - name: ✅ Check Server Status
+        run: |
+          if pgrep -f "server.jar" > /dev/null; then
+            echo "✅ Server is running successfully!"
+          else
+            echo "❌ Server failed to start."
+            exit 1
+          fi
