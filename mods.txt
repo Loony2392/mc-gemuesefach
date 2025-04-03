@@ -22,7 +22,6 @@ luckperms
 maintenancemode
 modernfix
 natures-compass
-open Parties and Claims
 ping-wheel
 placeholder-api
 rightclickharvest
