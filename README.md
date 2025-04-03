@@ -17,23 +17,23 @@ Herzlich willkommen auf **Gemüsefach**, dem ultimativen Minecraft-Server für k
 - ❌ **Fehler**
 
 ### Mods
-- 🔄 **3dskinlayers**
-- 🔄 **appleskin**
+- ✅ **3dskinlayers**
+- ✅ **appleskin**
 - ✅ **architectury-api**
 - 🔄 **balm**
-- 🔄 **betterf3**
+- ✅ **betterf3**
 - 🔄 **cardinal-components-api**
 - ✅ **chunky**
 - 🔄 **cloth-config**
 - 🔄 **collective**
-- 🔄 **cooking-for-blockheads**
+- ❌ **cooking-for-blockheads**
 - 🔄 **craterlib**
-- 🔄 **double-doors**
+- ✅ **double-doors**
 - ✅ **fabric-api**
 - ✅ **fabric-language-kotlin**
 - ✅ **forge-config-api-port**
-- 🔄 **gui-followers**
-- 🔄 **infinite-trading**
+- ✅ **gui-followers**
+- ✅ **infinite-trading**
 - 🔄 **jamlib**
 - ✅ **krypton**
 - ✅ **lithium**
@@ -41,15 +41,16 @@ Herzlich willkommen auf **Gemüsefach**, dem ultimativen Minecraft-Server für k
 - ✅ **maintenancemode**
 - 🔄 **modernfix**
 - ✅ **natures-compass**
-- 🔄 **ping-wheel**
+- ✅ **open Parties and Claims**
+- ✅ **ping-wheel**
 - ✅ **placeholder-api**
-- 🔄 **rightclickharvest**
+- ✅ **rightclickharvest**
 - ✅ **simple-voice-chat**
 - ✅ **sit!**
 - ✅ **sodium**
-- 🔄 **status-effect-bars**
-- 🔄 **storagedrawers**
-- 🔄 **travelersbackpack**
+- ✅ **status-effect-bars**
+- ✅ **storagedrawers**
+- ✅ **travelersbackpack**
 - 🔄 **yacl**
 
 y
