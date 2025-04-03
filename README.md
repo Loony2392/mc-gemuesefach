@@ -41,6 +41,7 @@ Herzlich willkommen auf **Gemüsefach**, dem ultimativen Minecraft-Server für k
 - ✅ **maintenancemode**
 - 🔄 **modernfix**
 - ✅ **natures-compass**
+- ✅ **open Parties and Claims**
 - ✅ **ping-wheel**
 - ✅ **placeholder-api**
 - ✅ **rightclickharvest**
