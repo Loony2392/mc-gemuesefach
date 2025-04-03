@@ -40,12 +40,11 @@ jobs:
             fi
           done < mods.txt
 
-      # ⬇️ Download and Install Fabric Server
-      - name: ⬇️ Download and Install Fabric Server
+      # ⬇️ Download Fabric Server Launcher
+      - name: ⬇️ Download Fabric Server Launcher
         run: |
-          curl -o fabric-installer.jar https://meta.fabricmc.net/v2/versions/loader/1.21.4/0.16.12/1.0.3/server/jar
-          java -jar fabric-installer.jar server -downloadMinecraft
-          mv fabric-server-launch.jar server.jar
+          curl -OJ https://meta.fabricmc.net/v2/versions/loader/1.21.4/0.16.12/1.0.3/server/jar
+          mv fabric-server-mc.1.21.4-loader.0.16.12-launcher.1.0.3.jar server.jar
 
       # ✅ Accept Minecraft EULA
       - name: ✅ Accept Minecraft EULA
@@ -54,7 +53,7 @@ jobs:
       # 🚀 Server starten
       - name: 🚀 Start Minecraft Server
         run: |
-          java -Xmx2G -Xms2G -jar server.jar nogui &
+          java -Xmx2G -jar server.jar nogui &
           sleep 30 # Warte, bis der Server vollständig gestartet ist
 
       # ✅ Überprüfen, ob der Server läuft
