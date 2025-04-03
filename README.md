@@ -17,11 +17,11 @@ Herzlich willkommen auf **Gemüsefach**, dem ultimativen Minecraft-Server für k
 - ❌ **Fehler**
 
 ### Mods
-- 🔄 **3dskinlayers**
-- 🔄 **appleskin**
+- ✅ **3dskinlayers**
+- ✅ **appleskin**
 - ✅ **architectury-api**
 - 🔄 **balm**
-- 🔄 **betterf3**
+- ✅ **betterf3**
 - 🔄 **cardinal-components-api**
 - ✅ **chunky**
 - 🔄 **cloth-config**
@@ -41,15 +41,15 @@ Herzlich willkommen auf **Gemüsefach**, dem ultimativen Minecraft-Server für k
 - ✅ **maintenancemode**
 - 🔄 **modernfix**
 - ✅ **natures-compass**
-- 🔄 **ping-wheel**
+- ✅ **ping-wheel**
 - ✅ **placeholder-api**
-- 🔄 **rightclickharvest**
+- ✅ **rightclickharvest**
 - ✅ **simple-voice-chat**
 - ✅ **sit!**
 - ✅ **sodium**
-- 🔄 **status-effect-bars**
-- 🔄 **storagedrawers**
-- 🔄 **travelersbackpack**
+- ✅ **status-effect-bars**
+- ✅ **storagedrawers**
+- ✅ **travelersbackpack**
 - 🔄 **yacl**
 
 Bleibt dran für Updates und viel Spaß auf "Gemüsefach"! 🌱🎮
