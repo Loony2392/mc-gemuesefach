@@ -1,10 +1,9 @@
 name: 🛠️ Test Minecraft Server with Mods RC
 
 on:
-  push:
-    branches:
-      - main
   workflow_dispatch:
+  schedule:
+    - cron: '0 12 * * 6' # Jeden Samstag um 12:00 Uhr UTC
 
 env:
   MINECRAFT_VERSION: "1.21.5" # Minecraft-Version
