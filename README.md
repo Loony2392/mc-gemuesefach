@@ -7,6 +7,7 @@ Herzlich willkommen auf **Gemüsefach**, dem ultimativen Minecraft-Server für k
 - 🛠️ **Version:** [1.21.4]
 - 🎭 **Modus:** [Survival]
 - 🔒 **Whitelist:** [Ja]
+- 🛠️ **Hostet by LOONY-TECH in EU / Germany**
 
 ## 🛠️ Mods & Status
 ### Legende:
