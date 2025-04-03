@@ -28,14 +28,15 @@ jobs:
           mkdir -p mods
           find ./mods -type f -name "*.jar" -exec cp {} ./mods/ \;
 
-      # ⬇️ Mods aus mods.txt herunterladen
-      - name: ⬇️ Download Mods from mods.txt
+      # ⬇️ Mods aus mods.txt herunterladen (nur für Minecraft 1.21.4)
+      - name: ⬇️ Download Mods for Minecraft 1.21.4
         run: |
           mkdir -p mods
+          echo "Downloading mods compatible with Minecraft 1.21.4..."
           while IFS= read -r slug; do
             if [ ! -z "$slug" ]; then
-              echo "Downloading mod: $slug"
-              curl -s "https://api.modrinth.com/v2/project/$slug/version" | jq -r '.[0].files[0].url' | xargs -n 1 curl -O -J
+              echo "Downloading mod: $slug for Minecraft 1.21.4"
+              curl -s "https://api.modrinth.com/v2/project/$slug/version" | jq -r '.[] | select(.game_versions[] | contains("1.21.4")) | .files[0].url' | xargs -n 1 curl -O -J
               mv *.jar mods/
             fi
           done < mods.txt
