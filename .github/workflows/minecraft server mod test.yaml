@@ -22,11 +22,11 @@ jobs:
           distribution: 'temurin'
           java-version: '17' # Minecraft benötigt Java 17
 
-      # 📂 Kopiere Mods aus dem Repository
+      # 📂 Kopiere Mods aus dem Repository (ohne redundantes Kopieren)
       - name: 📂 Copy Mods from Repository
         run: |
           mkdir -p mods
-          cp -r ./mods/* ./mods/
+          find ./mods -type f -name "*.jar" -exec cp {} ./mods/ \;
 
       # ⬇️ Mods aus mods.txt herunterladen
       - name: ⬇️ Download Mods from mods.txt
