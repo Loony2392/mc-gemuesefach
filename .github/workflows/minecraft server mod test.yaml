@@ -43,7 +43,7 @@ jobs:
       # ⬇️ Download and Install Fabric Server
       - name: ⬇️ Download and Install Fabric Server
         run: |
-          curl -o fabric-installer.jar https://meta.fabricmc.net/v2/versions/loader/1.21.4/0.14.21/installer.jar
+          curl -o fabric-installer.jar https://meta.fabricmc.net/v2/versions/loader/1.21.4/0.16.12/1.0.3/server/jar
           java -jar fabric-installer.jar server -downloadMinecraft
           mv fabric-server-launch.jar server.jar
 
