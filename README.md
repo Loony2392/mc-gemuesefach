@@ -39,7 +39,7 @@ Herzlich willkommen auf **Gemüsefach**, dem ultimativen Minecraft-Server für k
 - ✅ **lithium**
 - ✅ **luckperms**
 - ✅ **maintenancemode**
-- 🔄 **modernfix**
+- ✅ **modernfix**
 - ✅ **natures-compass**
 - ✅ **open Parties and Claims**
 - ✅ **ping-wheel**
