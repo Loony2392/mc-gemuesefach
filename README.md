@@ -24,7 +24,7 @@ Herzlich willkommen auf **Gemüsefach**, dem ultimativen Minecraft-Server für k
 - ✅ **betterf3**
 - ✅ **cardinal-components-api**
 - ✅ **chunky**
-- 🔄 **cloth-config**
+- ✅ **cloth-config**
 - 🔄 **collective**
 - ❌ **cooking-for-blockheads**
 - 🔄 **craterlib**
