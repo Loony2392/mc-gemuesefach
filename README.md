@@ -34,12 +34,12 @@ Herzlich willkommen auf **Gemüsefach**, dem ultimativen Minecraft-Server für k
 - 🔄 **gui-followers**
 - 🔄 **infinite-trading**
 - 🔄 **jamlib**
-- 🔄 **krypton**
-- 🔄 **lithium**
+- ✅ **krypton**
+- ✅ **lithium**
 - ✅ **luckperms**
 - ✅ **maintenancemode**
 - 🔄 **modernfix**
-- 🔄 **natures-compass**
+- ✅ **natures-compass**
 - 🔄 **ping-wheel**
 - ✅ **placeholder-api**
 - 🔄 **rightclickharvest**
