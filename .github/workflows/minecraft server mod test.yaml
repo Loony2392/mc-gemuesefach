@@ -1,0 +1,66 @@
+name: 🛠️ Test Minecraft Server with Mods
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  test-minecraft-server:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 📂 Repository auschecken
+      - name: 📂 Checkout repository
+        uses: actions/checkout@v3
+
+      # ☕ Java installieren
+      - name: ☕ Set up Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17' # Minecraft benötigt Java 17
+
+      # ⬇️ Mods herunterladen
+      - name: ⬇️ Download Mods from mods.txt
+        run: |
+          mkdir -p mods
+          while IFS= read -r slug; do
+            if [ ! -z "$slug" ]; then
+              echo "Downloading mod: $slug"
+              curl -s "https://api.modrinth.com/v2/project/$slug/version" | jq -r '.[0].files[0].url' | xargs -n 1 curl -O -J
+              mv *.jar mods/
+            fi
+          done < mods.txt
+
+      # 📂 Importiere vorhandene Mods
+      - name: 📂 Import existing mods folder
+        run: |
+          if [ -d "mods" ]; then
+            echo "Mods folder exists. Importing existing mods..."
+          else
+            echo "No existing mods folder found. Creating a new one..."
+            mkdir mods
+          fi
+
+      # ⬇️ Minecraft-Server herunterladen
+      - name: ⬇️ Download Minecraft Server
+        run: |
+          curl -o server.jar https://meta.fabricmc.net/v2/versions/loader/1.21.4/0.14.21/installer.jar
+
+      # 🚀 Server starten
+      - name: 🚀 Start Minecraft Server
+        run: |
+          java -jar server.jar nogui &
+          sleep 30 # Warte, bis der Server vollständig gestartet ist
+
+      # ✅ Überprüfen, ob der Server läuft
+      - name: ✅ Check Server Status
+        run: |
+          if pgrep -f "server.jar" > /dev/null; then
+            echo "✅ Server is running successfully!"
+          else
+            echo "❌ Server failed to start."
+            exit 1
+          fi
