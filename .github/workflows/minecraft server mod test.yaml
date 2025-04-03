@@ -22,7 +22,13 @@ jobs:
           distribution: 'temurin'
           java-version: '17' # Minecraft benötigt Java 17
 
-      # ⬇️ Mods herunterladen
+      # 📂 Kopiere Mods aus dem Repository
+      - name: 📂 Copy Mods from Repository
+        run: |
+          mkdir -p mods
+          cp -r ./mods/* ./mods/
+
+      # ⬇️ Mods aus mods.txt herunterladen
       - name: ⬇️ Download Mods from mods.txt
         run: |
           mkdir -p mods
@@ -34,25 +40,21 @@ jobs:
             fi
           done < mods.txt
 
-      # 📂 Importiere vorhandene Mods
-      - name: 📂 Import existing mods folder
+      # ⬇️ Download and Install Fabric Server
+      - name: ⬇️ Download and Install Fabric Server
         run: |
-          if [ -d "mods" ]; then
-            echo "Mods folder exists. Importing existing mods..."
-          else
-            echo "No existing mods folder found. Creating a new one..."
-            mkdir mods
-          fi
+          curl -o fabric-installer.jar https://meta.fabricmc.net/v2/versions/loader/1.21.4/0.14.21/installer.jar
+          java -jar fabric-installer.jar server -downloadMinecraft
+          mv fabric-server-launch.jar server.jar
 
-      # ⬇️ Minecraft-Server herunterladen
-      - name: ⬇️ Download Minecraft Server
-        run: |
-          curl -o server.jar https://meta.fabricmc.net/v2/versions/loader/1.21.4/0.14.21/installer.jar
+      # ✅ Accept Minecraft EULA
+      - name: ✅ Accept Minecraft EULA
+        run: echo "eula=true" > eula.txt
 
       # 🚀 Server starten
       - name: 🚀 Start Minecraft Server
         run: |
-          java -jar server.jar nogui &
+          java -Xmx2G -Xms2G -jar server.jar nogui &
           sleep 30 # Warte, bis der Server vollständig gestartet ist
 
       # ✅ Überprüfen, ob der Server läuft
