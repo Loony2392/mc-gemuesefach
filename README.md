@@ -34,7 +34,7 @@ Herzlich willkommen auf **Gemüsefach**, dem ultimativen Minecraft-Server für k
 - ✅ **forge-config-api-port**
 - ✅ **gui-followers**
 - ✅ **infinite-trading**
-- 🔄 **jamlib**
+- ✅ **jamlib**
 - ✅ **krypton**
 - ✅ **lithium**
 - ✅ **luckperms**
