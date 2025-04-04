@@ -10,13 +10,13 @@ Herzlich willkommen auf **Gemüsefach**, dem ultimativen Minecraft-Server für k
 - 🔐 **DDoS-Schutz:** Unser Server ist durch **TCPShield** vor DDoS-Angriffen geschützt, um eine stabile und sichere Spielerfahrung zu gewährleisten. ⚔️🛡️
 - 🛠️ **Hostet by LOONY-TECH in EU / Germany**
 
-## 🛠️ Mods & Status
+## 🛠️ Server Mods & Status
 ### Legende:
 - ✅ **Läuft**
 - 🔄 **Wird getestet**
 - ❌ **Fehler**
 
-### Mods
+### Server Mods
 - ✅ **3dskinlayers**
 - ✅ **appleskin**
 - ✅ **architectury-api**
