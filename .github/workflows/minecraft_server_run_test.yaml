@@ -33,15 +33,15 @@ jobs:
           mkdir -p mods
           find ./mods -type f -name "*.jar" -exec cp {} ./mods/ \;
 
-      # ⬇️ Mods aus mods.txt herunterladen (nur für die angegebene Minecraft-Version und den Loader "fabric")
-      - name: ⬇️ Download Mods for Minecraft ${{ env.MINECRAFT_VERSION }} (Fabric only)
+      # ⬇️ Mods aus mods.txt herunterladen (nur für die angegebene Minecraft-Version, Loader "fabric" und server-relevante Mods)
+      - name: ⬇️ Download Server-Relevant Mods for Minecraft ${{ env.MINECRAFT_VERSION }} (Fabric only)
         run: |
           mkdir -p mods
-          echo "Downloading mods compatible with Minecraft ${{ env.MINECRAFT_VERSION }} and Fabric..."
+          echo "Downloading server-relevant mods compatible with Minecraft ${{ env.MINECRAFT_VERSION }} and Fabric..."
           while IFS= read -r slug; do
             if [ ! -z "$slug" ]; then
               echo "Downloading mod: $slug for Minecraft ${{ env.MINECRAFT_VERSION }} (Fabric)"
-              curl -s "https://api.modrinth.com/v2/project/$slug/version" | jq -r '.[] | select(.game_versions[] | contains("${{ env.MINECRAFT_VERSION }}")) | select(.loaders[] | contains("fabric")) | .files[0].url' | xargs -n 1 curl -O -J
+              curl -s "https://api.modrinth.com/v2/project/$slug/version" | jq -r '.[] | select(.game_versions[] | contains("${{ env.MINECRAFT_VERSION }}")) | select(.loaders[] | contains("fabric")) | select(.categories[] | contains("server")) | .files[0].url' | xargs -n 1 curl -O -J
               mv *.jar mods/
             fi
           done < mods.txt
