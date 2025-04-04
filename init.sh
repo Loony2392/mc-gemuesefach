@@ -4,8 +4,8 @@ set -e
 # Definiere die Pfade
 SERVER_PATH="/opt/minecraft/server"
 WORLD_PATH="$SERVER_PATH/world"
-CONFIGS_PATH="$SERVER_PATH/configs"
-DATAPACKS_PATH="$WORLD_PATH/datapacks"
+CONFIGS_PATH="$SERVER_PATH/config"
+DATAPACKS_PATH="$WORLD_PATH/data/datapacks"
 MODS_PATH="$SERVER_PATH/mods"
 REPO_PATH="/opt/minecraft/datapacks_repo"
 GIT_REPO="https://github.com/Loony2392/mc-gemuesefach.git"
