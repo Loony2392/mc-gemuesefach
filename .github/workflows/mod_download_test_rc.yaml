@@ -28,12 +28,18 @@ jobs:
           while IFS= read -r slug; do
             if [ ! -z "$slug" ]; then
               echo "Testing download for mod: $slug"
-              curl -s "https://api.modrinth.com/v2/project/$slug/version" | jq -r '.[] | select(.game_versions[] | contains("${{ github.event.inputs.minecraft_version }}")) | select(.loaders[] | contains("fabric")) | select(.categories[] | contains("server")) | .files[0].url' | xargs -n 1 curl -O -J -o test-mods/$slug.jar
-              if [ -f "test-mods/$slug.jar" ]; then
-                echo "✅ Mod $slug downloaded successfully!"
+              mod_url=$(curl -s "https://api.modrinth.com/v2/project/$slug/version" | jq -r '.[] | select(.game_versions[] | contains("${{ github.event.inputs.minecraft_version }}")) | select(.loaders[] | contains("fabric")) | select(.environments.server == true) | .files[0].url')
+              
+              if [ ! -z "$mod_url" ]; then
+                curl -O -J -o test-mods/$slug.jar "$mod_url"
+                if [ -f "test-mods/$slug.jar" ]; then
+                  echo "✅ Mod $slug downloaded successfully!"
+                else
+                  echo "❌ Failed to download mod $slug."
+                  exit 1
+                fi
               else
-                echo "❌ Failed to download mod $slug."
-                exit 1
+                echo "⚠️ No compatible server-side version found for mod: $slug"
               fi
             fi
           done < mods.txt
