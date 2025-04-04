@@ -51,6 +51,7 @@ rightclickharvest
 simple-voice-chat
 sit!
 storagedrawers
+tab-was-taken
 toggle-item-frames
 towns-and-towers
 transmog

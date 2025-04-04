@@ -68,6 +68,7 @@ Herzlich willkommen auf **Gemüsefach**, dem ultimativen Minecraft-Server für k
 - ✅ **sodium**
 - ✅ **status-effect-bars**
 - ✅ **storagedrawers**
+- ✅ **tab-was-taken**
 - 🔄 **towns-and-towers**
 - 🔄 **transmog**
 - ✅ **travelersbackpack**
