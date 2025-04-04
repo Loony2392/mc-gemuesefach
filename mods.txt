@@ -33,3 +33,4 @@ storagedrawers
 travelersbackpack
 yacl
 towns-and-towers
+transmog
