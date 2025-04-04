@@ -35,7 +35,6 @@ polymer
 rightclickharvest
 simple-voice-chat
 sit!
-sortier
 storagedrawers
 toggle-item-frames
 towns-and-towers
