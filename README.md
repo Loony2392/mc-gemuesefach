@@ -18,6 +18,7 @@ Herzlich willkommen auf **Gemüsefach**, dem ultimativen Minecraft-Server für k
 
 ### Server Mods
 - ✅ **3dskinlayers**
+- ✅ **3afk-sleep**
 - ✅ **appleskin**
 - ✅ **architectury-api**
 - ✅ **balm**
@@ -29,6 +30,17 @@ Herzlich willkommen auf **Gemüsefach**, dem ultimativen Minecraft-Server für k
 - 🔄 **collective**
 - ❌ **cooking-for-blockheads**
 - ✅ **craterlib**
+- ✅ **dungeons-and-taverns**
+- ✅ **dungeons-and-taverns-stronghold-overhaul**
+- ✅ **dungeons-and-taverns-ancient-city-overhaul**
+- ✅ **dungeons-and-taverns-pillager-outpost-overhaul**
+- ✅ **dungeons-and-taverns-swamp-hut-overhaul**
+- ✅ **dungeons-and-taverns-woodland-mansion-replacement**
+- ✅ **dungeons-and-taverns-jungle-temple-overhaul**
+- ✅ **dungeons-and-taverns-ocean-monument-overhaul**
+- ✅ **dungeons-and-taverns-nether-fortress-overhaul**
+- ✅ **dungeons-and-taverns-desert-temple-overhaul**
+- ✅ **dungeons-and-taverns-end-castle-standalone**
 - ✅ **double-doors**
 - ✅ **fabric-api**
 - ✅ **fabric-language-kotlin**

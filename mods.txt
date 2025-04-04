@@ -1,3 +1,4 @@
+afk-sleep
 appleskin
 architectury-api
 balm
