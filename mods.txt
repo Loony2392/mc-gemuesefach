@@ -2,6 +2,7 @@ appleskin
 architectury-api
 balm
 betterwalls
+builders-dream
 candy-wrapper
 cardinal-components-api
 chunky
@@ -31,6 +32,7 @@ ferrite-core
 filament
 forge-config-api-port
 infinite-trading
+invis-item-frame
 jade
 jamlib
 just-player-heads
@@ -41,6 +43,7 @@ maintenancemode
 modernfix
 name-palette
 natures-compass
+nullscape
 ping-wheel
 placeholder-api
 polydecorations
@@ -57,4 +60,5 @@ tsa-concrete
 tsa-decorations
 tsa-planks
 tsa-stone
+vertical-slabs
 yacl
