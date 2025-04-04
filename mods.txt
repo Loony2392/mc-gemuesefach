@@ -13,7 +13,6 @@ collective
 cooking-for-blockheads
 craterlib
 cristel-lib
-distanthorizons
 dungeons-and-taverns
 dungeons-and-taverns-stronghold-overhaul
 dungeons-and-taverns-ancient-city-overhaul
@@ -34,7 +33,6 @@ filament
 forge-config-api-port
 infinite-trading
 invis-item-frame
-jade
 jamlib
 just-player-heads
 krypton
