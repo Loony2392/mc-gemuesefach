@@ -44,3 +44,5 @@ tsa-decorations
 tsa-planks  
 tsa-stone  
 yacl
+towns-and-towers
+transmog
