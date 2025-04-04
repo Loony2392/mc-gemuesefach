@@ -3,7 +3,7 @@
 Herzlich willkommen auf **Gemüsefach**, dem ultimativen Minecraft-Server für kreative Baumeister und Abenteurer! 🏗️✨
 
 ## 📌 Server-Informationen
-- 🌍 **Adresse:** [FOLGT]
+- 🌍 **Adresse:** [mc-gemuesefach.loony-tech.de]
 - 🛠️ **Version:** [1.21.4]
 - 🎭 **Modus:** [Survival]
 - 🔒 **Whitelist:** [Ja]
