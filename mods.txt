@@ -32,3 +32,4 @@ status-effect-bars
 storagedrawers
 travelersbackpack
 yacl
+towns-and-towers

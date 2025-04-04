@@ -53,6 +53,7 @@ Herzlich willkommen auf **Gemüsefach**, dem ultimativen Minecraft-Server für k
 - ✅ **travelersbackpack**
 - ✅ **yacl**
 - 🔄 **fabricord**
+- 🔄 **towns-and-towers**
 
 ## 📂 Projektstruktur
 
