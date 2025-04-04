@@ -1,0 +1,16 @@
+{
+    "enabled": false,
+    "doBackup": false,
+    "message": "Der Server befindet sich aktuell im Wartungsmodus,bitte schaue später nochmal vorbei <3",
+    "motd": "Der Server ist aktuell in der Wartung!",
+    "maintenanceIcon": "",
+    "schedule": {
+            "startTime": "",
+            "endTime": "",
+            "disableOnRestart": false,
+            "maintanceNotifyMessage": "Serverwartung startet in %s minute(s)"
+    },
+    "kickOnlinePlayers": true,
+    "configVersion": 2,
+    "allowedUsers": []
+}
