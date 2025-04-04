@@ -1,4 +1,5 @@
 appleskin
+architectury-api
 balm
 betterwalls
 candy-wrapper
@@ -8,6 +9,7 @@ cloth-config
 clumps
 collective
 cooking-for-blockheads
+craterlib
 cristel-lib
 distanthorizons
 double-doors
