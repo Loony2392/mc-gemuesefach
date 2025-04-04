@@ -22,6 +22,7 @@ Herzlich willkommen auf **Gemüsefach**, dem ultimativen Minecraft-Server für k
 - ✅ **architectury-api**
 - ✅ **balm**
 - ✅ **betterf3**
+- 🔄 **betterwalls**
 - ✅ **cardinal-components-api**
 - ✅ **chunky**
 - ✅ **cloth-config**
@@ -31,28 +32,39 @@ Herzlich willkommen auf **Gemüsefach**, dem ultimativen Minecraft-Server für k
 - ✅ **double-doors**
 - ✅ **fabric-api**
 - ✅ **fabric-language-kotlin**
+- 🔄 **fabricord**
 - ✅ **forge-config-api-port**
 - ✅ **gui-followers**
 - ✅ **infinite-trading**
 - ✅ **jamlib**
+- 🔄 **just-player-heads**
 - ✅ **krypton**
 - ✅ **lithium**
 - ✅ **luckperms**
 - ✅ **maintenancemode**
 - ✅ **modernfix**
+- 🔄 **name-palette**
 - ✅ **natures-compass**
 - ✅ **open Parties and Claims**
 - ✅ **ping-wheel**
 - ✅ **placeholder-api**
+- 🔄 **physicsmod**
+- 🔄 **polydecorations**
 - ✅ **rightclickharvest**
 - ✅ **simple-voice-chat**
 - ✅ **sit!**
 - ✅ **sodium**
 - ✅ **status-effect-bars**
 - ✅ **storagedrawers**
+- 🔄 **toggle-item-frames**
+- 🔄 **towns-and-towers**
+- 🔄 **transmog**
 - ✅ **travelersbackpack**
+- 🔄 **tsa-concrete**
+- 🔄 **tsa-decorations**
+- 🔄 **tsa-planks**
+- 🔄 **tsa-stone**
 - ✅ **yacl**
-- 🔄 **fabricord**
 
 ## 📂 Projektstruktur
 
