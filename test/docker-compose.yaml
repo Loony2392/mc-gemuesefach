@@ -11,44 +11,9 @@ services:
       - "25700:25565"
       - "8100:8100"
       - "24454:24454/udp"
+    env_file:
+      - stack.env
     environment:
-      # System & Nutzer-IDs
-      PUID: 1000
-      PGID: 1000
-      EULA: "TRUE"
-
-      ### MC-VERSION ###
-      VERSION: "1.21.4"           # Die gewünschte Minecraft-Version
-      TYPE: "FABRIC"             # Mod-Loader: "FABRIC", "FORGE", "VANILLA" etc.
-
-      ### RAM & Leistung ###
-      cpuset: "2,3,4,5"       # CPU-Kerne, die dem Server zugewiesen werden (z.B. "0,1,2,3")
-      MEMORY: "6G"               # Maximaler RAM für den Server
-      JVM_OPTS: "-XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+AlwaysPreTouch -XX:G1NewSizePercent=30 -XX:G1MaxNewSizePercent=40 -XX:G1HeapRegionSize=8M -XX:G1ReservePercent=20 -XX:G1HeapWastePercent=5 -XX:G1MixedGCCountTarget=4 -XX:InitiatingHeapOccupancyPercent=15 -XX:G1RSetUpdatingPauseTimePercent=5 -XX:SurvivorRatio=32 -XX:+PerfDisableSharedMem -XX:MaxTenuringThreshold=1"
-
-      ### Server-Settings ###
-      MOTD: "§l§3➤ §aWillkommen im §2Gemüsefach §c❤ §3➤"  # Server-MOTD (Message of the Day)
-      LEVEL: "world"            # Der Name der Welt
-      LEVEL_SEED: "8085521225476043124"            # Welt-Seed (optional)
-      
-      ALLOW_NETHER: "true"      # Erlaubt das Nether-Dimension
-      ALLOW_END: "true"         # Erlaubt das End
-      VIEW_DISTANCE: "20"       # Sichtweite der Spieler
-      MAX_PLAYERS: "20"         # Maximale Spielerzahl
-      DIFFICULTY: "normal"      # Schwierigkeitsgrad: "peaceful", "easy", "normal", "hard"
-      GAMEMODE: "survival"     # Start-Spielmodus: "survival", "creative", "adventure", "spectator"
-      
-      ### Whitelist & Operatoren ###
-      WHITE-LIST: "true"        # Whitelist aktivieren
-
-      ### Flight & RCON ###
-      ALLOW_FLIGHT: "true"      # Spieler können fliegen
-      ENABLE_RCON: "false"      # RCON aktivieren (Remote Console)
-      
-      ### Query & Server Info ###
-      ENABLE_QUERY: "true"      # Aktiviert den Minecraft-Query-Dienst
-      QUERY_PORT: "25565"       # Port für den Query-Dienst
-
       ### Mods & Modloader ###
       MODRINTH_PROJECTS: | # Modrinth-Projekte, die automatisch geladen werden
         fabric-api
@@ -86,6 +51,8 @@ services:
         gui-followers
         status-effect-bars
         fabricord
+        
+      MODRINTH_VERSION_TYPE: "beta" # Erlaubt Beta-Versionen (mögliche Werte: release, beta, alpha)
 
       # Du kannst hier auch CurseForge-Links einfügen, wenn du manuelle Mods benötigst.
     tty: true
