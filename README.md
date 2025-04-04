@@ -52,6 +52,7 @@ Herzlich willkommen auf **Gemüsefach**, dem ultimativen Minecraft-Server für k
 - ✅ **storagedrawers**
 - ✅ **travelersbackpack**
 - ✅ **yacl**
+- 🔄 **fabricord**
 
 ## 📂 Projektstruktur
 
