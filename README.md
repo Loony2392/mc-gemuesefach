@@ -83,7 +83,7 @@ Hier ist eine Übersicht über die Dateien in diesem Repository und ihre Bedeutu
 
 - **LICENSE**: Enthält die Lizenzinformationen für dieses Projekt (MIT License).
 - **config**: Enthält die Configurationen für die Mods 
-- **mods.txt**: Eine Liste aller Mods, die über [Modrinth](https://modrinth.com/) anhand ihres Slug-Namens automatisch heruntergeladen werden können.
+- **mods.txt**: Eine Liste aller Mods / Datapacks, die über [Modrinth](https://modrinth.com/) anhand ihres Slug-Namens automatisch heruntergeladen werden können.
 - **mods/**: Enthält Mods, die nicht automatisch heruntergeladen werden können und daher manuell in diesen Ordner abgelegt werden müssen.
 - **README.md**: Diese Datei, die Informationen über den Server, die Mods und die Projektstruktur enthält.
 
