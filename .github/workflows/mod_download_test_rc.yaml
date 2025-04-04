@@ -1,4 +1,4 @@
-name: 🧪 Test All Mods for Fabric from mods.txt RC
+name: 🧪 Test All Server-Relevant Mods for Fabric from mods.txt RC
 
 on:
   push:
@@ -20,15 +20,15 @@ jobs:
       - name: 📂 Checkout repository
         uses: actions/checkout@v3
 
-      # 📄 Mods aus mods.txt herunterladen und testen (nur für Fabric)
-      - name: ⬇️ Test Mod Downloads for Fabric from mods.txt
+      # 📄 Mods aus mods.txt herunterladen und testen (nur für Fabric und server-relevante Mods)
+      - name: ⬇️ Test Server-Relevant Mod Downloads for Fabric from mods.txt
         run: |
           mkdir -p test-mods
-          echo "Testing downloads for all Fabric mods in mods.txt with Minecraft version ${{ github.event.inputs.minecraft_version }}..."
+          echo "Testing downloads for all server-relevant Fabric mods in mods.txt with Minecraft version ${{ github.event.inputs.minecraft_version }}..."
           while IFS= read -r slug; do
-            if [ ! -z "$slug"; then
+            if [ ! -z "$slug" ]; then
               echo "Testing download for mod: $slug"
-              curl -s "https://api.modrinth.com/v2/project/$slug/version" | jq -r '.[] | select(.game_versions[] | contains("${{ github.event.inputs.minecraft_version }}")) | select(.loaders[] | contains("fabric")) | .files[0].url' | xargs -n 1 curl -O -J -o test-mods/$slug.jar
+              curl -s "https://api.modrinth.com/v2/project/$slug/version" | jq -r '.[] | select(.game_versions[] | contains("${{ github.event.inputs.minecraft_version }}")) | select(.loaders[] | contains("fabric")) | select(.categories[] | contains("server")) | .files[0].url' | xargs -n 1 curl -O -J -o test-mods/$slug.jar
               if [ -f "test-mods/$slug.jar" ]; then
                 echo "✅ Mod $slug downloaded successfully!"
               else
