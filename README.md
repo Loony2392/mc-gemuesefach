@@ -64,9 +64,6 @@ Herzlich willkommen auf **Gemüsefach**, dem ultimativen Minecraft-Server für k
 - 🔄 **tsa-planks**
 - 🔄 **tsa-stone**
 - ✅ **yacl**
-- 🔄 **fabricord**
-- 🔄 **towns-and-towers**
-- 🔄 **transmog**
 
 ## 📂 Projektstruktur
 
