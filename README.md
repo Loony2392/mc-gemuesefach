@@ -30,6 +30,7 @@ Herzlich willkommen auf **Gemüsefach**, dem ultimativen Minecraft-Server für k
 - 🔄 **collective**
 - ❌ **cooking-for-blockheads**
 - ✅ **craterlib**
+- ✅ **dinobriks-rum**
 - ✅ **dungeons-and-taverns**
 - ✅ **dungeons-and-taverns-stronghold-overhaul**
 - ✅ **dungeons-and-taverns-ancient-city-overhaul**
