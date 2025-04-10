@@ -5,6 +5,7 @@ balm
 betterwalls
 builders-dream
 candy-wrapper
+catenary
 cardinal-components-api
 chunky
 cloth-config

@@ -24,6 +24,7 @@ Herzlich willkommen auf **Gemüsefach**, dem ultimativen Minecraft-Server für k
 - ✅ **balm**
 - ✅ **betterf3**
 - 🔄 **betterwalls**
+- 🔄 **catenary**
 - ✅ **cardinal-components-api**
 - ✅ **chunky**
 - ✅ **cloth-config**
