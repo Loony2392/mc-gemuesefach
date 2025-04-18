@@ -1,15 +1,10 @@
-name: 🛠️ Test Minecraft Server with Mods
+name: 🛠️ Test Minecraft Server with Docker Compose
 
 on:
   push:
     branches:
       - main
   workflow_dispatch:
-
-env:
-  MINECRAFT_VERSION: "1.21.4" # Minecraft-Version
-  FABRIC_LOADER_VERSION: "0.16.12" # Fabric-Loader-Version
-  FABRIC_LAUNCHER_VERSION: "1.0.3" # Fabric-Launcher-Version
 
 jobs:
   test-minecraft-server:
@@ -20,65 +15,39 @@ jobs:
       - name: 📂 Checkout repository
         uses: actions/checkout@v3
 
-      # ☕ Java 21 installieren
-      - name: ☕ Set up Java 21
-        uses: actions/setup-java@v3
-        with:
-          distribution: 'temurin'
-          java-version: '21' # Minecraft benötigt Java 21
+      # 🐳 Docker installieren
+      - name: 🐳 Set up Docker
+        uses: docker/setup-buildx-action@v2
 
-      # 📂 Kopiere Mods aus dem Repository (ohne redundantes Kopieren)
-      - name: 📂 Copy Mods from Repository
+      # 🐳 Docker Compose installieren
+      - name: 🐳 Install Docker Compose
         run: |
-          mkdir -p mods
-          find ./mods -type f -name "*.jar" -exec cp {} ./mods/ \;
+          sudo apt-get update
+          sudo apt-get install -y docker-compose
 
-      # ⬇️ Mods aus mods.txt herunterladen (nur für die angegebene Minecraft-Version, Loader "fabric" und server-relevante Mods)
-      - name: ⬇️ Download Server-Relevant Mods for Minecraft ${{ env.MINECRAFT_VERSION }} (Fabric only)
+      # 📂 Mods-Ordner vorbereiten
+      - name: 📂 Prepare Mods Folder
         run: |
-          mkdir -p mods
-          echo "Downloading server-relevant mods compatible with Minecraft ${{ env.MINECRAFT_VERSION }} and Fabric..."
-          while IFS= read -r slug; do
-            if [ ! -z "$slug" ]; then
-              echo "Downloading mod: $slug for Minecraft ${{ env.MINECRAFT_VERSION }} (Fabric)"
-              mod_url=$(curl -s "https://api.modrinth.com/v2/project/$slug/version" | jq -r '.[] | select(.game_versions[] | contains("${{ env.MINECRAFT_VERSION }}")) | select(.loaders[] | contains("fabric")) | select(.environments.server == true) | .files[0].url')
-              
-              if [ ! -z "$mod_url" ]; then
-                curl -O -J -o mods/$slug.jar "$mod_url"
-                if [ -f "mods/$slug.jar" ]; then
-                  echo "✅ Mod $slug downloaded successfully!"
-                else
-                  echo "❌ Failed to download mod $slug."
-                  exit 1
-                fi
-              else
-                echo "⚠️ No compatible server-side version found for mod: $slug"
-              fi
-            fi
-          done < mods.txt
+          mkdir -p /opt/minecraft/server/mods
+          cp -r mods/* /opt/minecraft/server/mods/
 
-      # ⬇️ Download Fabric Server Launcher
-      - name: ⬇️ Download Fabric Server Launcher
+      # 🚀 Docker-Compose starten
+      - name: 🚀 Start Minecraft Server with Docker Compose
         run: |
-          curl -OJ https://meta.fabricmc.net/v2/versions/loader/${{ env.MINECRAFT_VERSION }}/${{ env.FABRIC_LOADER_VERSION }}/${{ env.FABRIC_LAUNCHER_VERSION }}/server/jar
-          mv fabric-server-mc.${{ env.MINECRAFT_VERSION }}-loader.${{ env.FABRIC_LOADER_VERSION }}-launcher.${{ env.FABRIC_LAUNCHER_VERSION }}.jar server.jar
-
-      # ✅ Accept Minecraft EULA
-      - name: ✅ Accept Minecraft EULA
-        run: echo "eula=true" > eula.txt
-
-      # 🚀 Server starten
-      - name: 🚀 Start Minecraft Server
-        run: |
-          java -Xmx2G -jar server.jar nogui &
-          sleep 30 # Warte, bis der Server vollständig gestartet ist
+          docker-compose -f docker/docker-compose.yaml up -d
 
       # ✅ Überprüfen, ob der Server läuft
       - name: ✅ Check Server Status
         run: |
-          if pgrep -f "server.jar" > /dev/null; then
+          if docker ps | grep mc_gemuesefach > /dev/null; then
             echo "✅ Server is running successfully!"
           else
             echo "❌ Server failed to start."
             exit 1
           fi
+
+      # 🛑 Docker-Compose stoppen
+      - name: 🛑 Stop Docker Compose
+        if: always()
+        run: |
+          docker-compose -f docker/docker-compose.yaml down
