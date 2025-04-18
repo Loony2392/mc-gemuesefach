@@ -1,0 +1,94 @@
+version: '3'
+services:
+  minecraft:
+    image: itzg/minecraft-server:latest
+    restart: unless-stopped
+    container_name: mc_gemuesefach
+    hostname: mc_gemuesefach
+    volumes:
+      - /opt/minecraft/server:/data
+    ports:
+      - "25700:25565"
+      - "8100:8100"
+      - "24454:24454/udp"
+    env_file:
+      - stack.env
+    environment:
+      ### Mods & Modloader ###
+      MODRINTH_PROJECTS: | # Modrinth-Projekte, die automatisch geladen werden
+        afk-sleep
+        appleskin
+        auto-harvest
+        architectury-api
+        balm
+        betterwalls
+        bluemap
+        tasty-vanilla
+        builders-dream
+        candy-wrapper
+        catenary
+        cardinal-components-api
+        chunky
+        cloth-config
+        clumps
+        collective
+        craterlib
+        cristel-lib
+        dinobriks-rum
+        dungeons-and-taverns
+        dungeons-and-taverns-stronghold-overhaul
+        dungeons-and-taverns-ancient-city-overhaul
+        dungeons-and-taverns-pillager-outpost-overhaul
+        dungeons-and-taverns-swamp-hut-overhaul
+        dungeons-and-taverns-woodland-mansion-replacement
+        dungeons-and-taverns-jungle-temple-overhaul
+        dungeons-and-taverns-ocean-monument-overhaul
+        dungeons-and-taverns-nether-fortress-overhaul
+        dungeons-and-taverns-desert-temple-overhaul
+        dungeons-and-taverns-end-castle-standalone
+        double-doors
+        fabric-api
+        fabric-language-kotlin
+        fabricord
+        ferrite-core
+        filament
+        forge-config-api-port
+        infinite-trading
+        invis-item-frame
+        jamlib
+        just-player-heads
+        krypton
+        lithium
+        luckperms
+        maintenancemode
+        modernfix
+        morefoodmod
+        name-palette
+        natures-compass
+        nullscape
+        ping-wheel
+        placeholder-api
+        polydecorations
+        polymer
+        rightclickharvest
+        simple-voice-chat
+        sit!
+        storagedrawers
+        tab-was-taken
+        toggle-item-frames
+        towns-and-towers
+        transmog
+        travelersbackpack
+        tsa-concrete
+        tsa-decorations
+        tsa-planks
+        tsa-stone
+        vertical-slabs
+        waystones
+        yacl
+        
+      MODRINTH_VERSION_TYPE: "beta" # Erlaubt Beta-Versionen (mögliche Werte: release, beta, alpha)
+
+      # Du kannst hier auch CurseForge-Links einfügen, wenn du manuelle Mods benötigst.
+    tty: true
+    stdin_open: true
