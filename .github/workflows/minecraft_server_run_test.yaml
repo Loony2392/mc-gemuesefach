@@ -46,6 +46,11 @@ jobs:
             exit 1
           fi
 
+      # 📜 Server-Logs auf Fehler überprüfen
+      - name: 📜 Check Server Logs for Errors
+        run: |
+          docker logs mc_gemuesefach | grep -iE "error|exception|warn" || echo "No errors or warnings found."
+
       # 🛑 Docker-Compose stoppen
       - name: 🛑 Stop Docker Compose
         if: always()
