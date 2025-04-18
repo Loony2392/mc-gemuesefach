@@ -44,10 +44,11 @@ jobs:
           echo "✅ Finished waiting for server startup."
 
       # 📜 Server-Logs auf Fehler überprüfen
-      - name: 📜 Check Server Logs for Errors
+      - name: 📜 Check Entire Server Logs for Errors
         run: |
-          echo "Checking server logs for errors..."
-          if docker logs mc_gemuesefach | grep -i "error"; then
+          echo "Checking entire server logs for errors..."
+          docker logs mc_gemuesefach > server.log
+          if grep -i "\[.*\/ERROR\]" server.log; then
             echo "❌ Errors found in server logs!"
             exit 1
           else
