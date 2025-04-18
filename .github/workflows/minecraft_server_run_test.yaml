@@ -1,4 +1,4 @@
-name: 🛠️ Test Minecraft Server Release 1.21.4
+name: 🛠️ Test Minecraft Server Release 1.21.5
 
 on:
   push:
@@ -34,7 +34,14 @@ jobs:
       # 🚀 Docker-Compose starten
       - name: 🚀 Start Minecraft Server with Docker Compose
         run: |
-          docker-compose -f docker/docker-compose.yaml up -d
+          docker-compose -f docker/test/docker-compose.yaml up -d
+
+      # ⏳ Warten, bis der Server vollständig gestartet ist
+      - name: ⏳ Wait for Server to Start
+        run: |
+          echo "Waiting for server to start..."
+          timeout 300 bash -c 'until docker logs mc_gemuesefach 2>&1 | grep -q "Done"; do sleep 5; done'
+          echo "✅ Server has started successfully!"
 
       # ✅ Überprüfen, ob der Server läuft
       - name: ✅ Check Server Status
@@ -55,4 +62,4 @@ jobs:
       - name: 🛑 Stop Docker Compose
         if: always()
         run: |
-          docker-compose -f docker/docker-compose.yaml down
+          docker-compose -f docker/test/docker-compose.yaml down
