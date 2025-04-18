@@ -43,6 +43,12 @@ jobs:
           timeout 300 bash -c 'until docker logs mc_gemuesefach 2>&1 | grep -q "Done"; do sleep 5; done'
           echo "✅ Server has started successfully!"
 
+      # 📜 Server-Logs auf Fehler und Warnungen überprüfen
+      - name: 📜 Check Server Logs for Errors and Warnings
+        run: |
+          echo "Checking server logs for errors and warnings..."
+          docker logs mc_gemuesefach | grep -iE "\[.*\/(ERROR|WARN)\]" || echo "No errors or warnings found."
+
       # ✅ Überprüfen, ob der Server läuft
       - name: ✅ Check Server Status
         run: |
@@ -52,11 +58,6 @@ jobs:
             echo "❌ Server failed to start."
             exit 1
           fi
-
-      # 📜 Server-Logs auf Fehler überprüfen
-      - name: 📜 Check Server Logs for Errors
-        run: |
-          docker logs mc_gemuesefach | grep -iE "error|exception|warn" || echo "No errors or warnings found."
 
       # 🛑 Docker-Compose stoppen
       - name: 🛑 Stop Docker Compose
