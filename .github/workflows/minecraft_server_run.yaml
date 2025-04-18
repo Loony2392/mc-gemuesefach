@@ -40,14 +40,19 @@ jobs:
       - name: ⏳ Wait for Server to Start
         run: |
           echo "Waiting for server to start..."
-          timeout 300 bash -c 'until docker logs mc_gemuesefach 2>&1 | grep -q "Done"; do sleep 5; done'
-          echo "✅ Server has started successfully!"
+          sleep 300  # 5 Minuten warten
+          echo "✅ Finished waiting for server startup."
 
-      # 📜 Server-Logs auf Fehler und Warnungen überprüfen
-      - name: 📜 Check Server Logs for Errors and Warnings
+      # 📜 Server-Logs auf Fehler überprüfen
+      - name: 📜 Check Server Logs for Errors
         run: |
-          echo "Checking server logs for errors and warnings..."
-          docker logs mc_gemuesefach | grep -iE "\[.*\/(ERROR|WARN)\]" || echo "No errors or warnings found."
+          echo "Checking server logs for errors..."
+          if docker logs mc_gemuesefach | grep -i "error"; then
+            echo "❌ Errors found in server logs!"
+            exit 1
+          else
+            echo "✅ No errors found in server logs."
+          fi
 
       # ✅ Überprüfen, ob der Server läuft
       - name: ✅ Check Server Status
