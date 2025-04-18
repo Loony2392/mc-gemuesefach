@@ -1,0 +1,34 @@
+# Die maximale Renderdistanz für LOD-Chunks (in Chunks).
+# Höhere Werte verbessern die Sichtweite, können aber die Leistung beeinträchtigen.
+lodRenderDistance = 512
+
+# Die Qualität der LOD-Modelle (0 = niedrig, 1 = mittel, 2 = hoch).
+# Höhere Werte verbessern die visuelle Qualität, können aber die Leistung beeinträchtigen.
+lodQuality = 1
+
+# Aktiviert die Verwendung von Multithreading für die LOD-Berechnung.
+# Dies kann die Leistung auf Mehrkernprozessoren erheblich verbessern.
+useMultithreading = true
+
+# Die Anzahl der Threads, die für die LOD-Berechnung verwendet werden.
+# Standardmäßig wird die Anzahl der verfügbaren CPU-Kerne verwendet.
+threadCount = 4
+
+# Die Entfernung, ab der LOD-Chunks anstelle von normalen Chunks verwendet werden.
+# Niedrigere Werte können die Leistung verbessern, indem mehr entfernte Chunks vereinfacht werden.
+lodTransitionDistance = 128
+
+# Aktiviert die Verwendung von vereinfachten Texturen für LOD-Chunks.
+# Dies kann die Leistung verbessern, indem der Speicherverbrauch reduziert wird.
+useSimplifiedTextures = true
+
+# Die maximale Anzahl von LOD-Chunks, die gleichzeitig geladen werden können.
+# Höhere Werte verbessern die Sichtweite, können aber die Leistung beeinträchtigen.
+maxLoadedLodChunks = 10000
+
+# Aktiviert die dynamische Anpassung der LOD-Renderdistanz basierend auf der FPS.
+# Dies kann helfen, die Leistung bei schwächeren Systemen zu stabilisieren.
+dynamicLodAdjustment = true
+
+# Die Ziel-FPS, die bei aktivierter dynamischer LOD-Anpassung angestrebt werden.
+targetFps = 60
