@@ -1,4 +1,4 @@
-name: 🧪 Test All Server-Relevant Mods for Fabric from mods.txt RC
+name: 🧪 Test Minecraft Server Mods for 1.21.5
 
 on:
   push:
