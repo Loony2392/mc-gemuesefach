@@ -1,8 +1,11 @@
 afk-sleep
 appleskin
+auto-harvest
 architectury-api
 balm
 betterwalls
+bluemap
+tasty-vanilla
 builders-dream
 candy-wrapper
 catenary
@@ -11,7 +14,6 @@ chunky
 cloth-config
 clumps
 collective
-cooking-for-blockheads
 craterlib
 cristel-lib
 dinobriks-rum
@@ -42,6 +44,7 @@ lithium
 luckperms
 maintenancemode
 modernfix
+morefoodmod
 name-palette
 natures-compass
 nullscape
@@ -63,4 +66,5 @@ tsa-decorations
 tsa-planks
 tsa-stone
 vertical-slabs
+waystones
 yacl

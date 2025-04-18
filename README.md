@@ -20,8 +20,11 @@ Herzlich willkommen auf **Gemüsefach**, dem ultimativen Minecraft-Server für k
 - ✅ **3dskinlayers**
 - ✅ **3afk-sleep**
 - ✅ **appleskin**
+- ✅ **auto-harvest**
 - ✅ **architectury-api**
 - ✅ **balm**
+- ✅ **bluemap**
+- ✅ **tasty-vanilla**
 - ✅ **betterf3**
 - 🔄 **betterwalls**
 - 🔄 **catenary**
@@ -57,6 +60,7 @@ Herzlich willkommen auf **Gemüsefach**, dem ultimativen Minecraft-Server für k
 - ✅ **luckperms**
 - ✅ **maintenancemode**
 - ✅ **modernfix**
+- ✅ **morefoodmod**
 - 🔄 **name-palette**
 - ✅ **natures-compass**
 - ✅ **open Parties and Claims**
@@ -79,6 +83,7 @@ Herzlich willkommen auf **Gemüsefach**, dem ultimativen Minecraft-Server für k
 - 🔄 **tsa-planks**
 - 🔄 **tsa-stone**
 - ✅ **yacl**
+- ✅ **waystones**
 
 ## 📂 Projektstruktur
 
