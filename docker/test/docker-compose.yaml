@@ -25,7 +25,6 @@ services:
         bluemap
         tasty-vanilla
         builders-dream
-        candy-wrapper
         catenary
         cardinal-components-api
         chunky
@@ -34,7 +33,6 @@ services:
         collective
         craterlib
         cristel-lib
-        dinobriks-rum
         dungeons-and-taverns
         dungeons-and-taverns-stronghold-overhaul
         dungeons-and-taverns-ancient-city-overhaul
@@ -64,7 +62,6 @@ services:
         modernfix
         morefoodmod
         more-tools
-        name-palette
         natures-compass
         nullscape
         ping-wheel
