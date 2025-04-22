@@ -25,7 +25,6 @@ services:
         bluemap
         tasty-vanilla
         builders-dream
-        candy-wrapper
         catenary
         cardinal-components-api
         chunky
@@ -63,7 +62,6 @@ services:
         maintenancemode
         modernfix
         morefoodmod
-        name-palette
         natures-compass
         nullscape
         ping-wheel
