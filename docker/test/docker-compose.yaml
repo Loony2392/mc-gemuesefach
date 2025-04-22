@@ -74,6 +74,7 @@ services:
         rightclickharvest
         simple-voice-chat
         sit!
+        streamotes
         storagedrawers
         tab-was-taken
         toggle-item-frames
