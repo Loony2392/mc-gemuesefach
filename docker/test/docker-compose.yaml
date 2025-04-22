@@ -63,6 +63,7 @@ services:
         maintenancemode
         modernfix
         morefoodmod
+        more-tools
         name-palette
         natures-compass
         nullscape
