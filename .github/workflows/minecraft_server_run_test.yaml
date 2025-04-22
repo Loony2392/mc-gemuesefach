@@ -1,4 +1,4 @@
-name: 🛠️ Test Minecraft Server Release 1.21.5
+name: 🛠️ Test Minecraft Server DEV
 
 on:
   push:
