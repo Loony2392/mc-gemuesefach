@@ -63,6 +63,7 @@ services:
         maintenancemode
         modernfix
         morefoodmod
+        name-palette
         natures-compass
         nullscape
         ping-wheel
