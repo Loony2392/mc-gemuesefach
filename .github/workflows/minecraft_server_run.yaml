@@ -47,7 +47,7 @@ jobs:
       - name: 📜 Check Server Logs for Errors
         run: |
           echo "Checking server logs for errors..."
-          docker logs mc_gemuesefach > server.log
+          docker logs mc_gemuesefach | tee server.log
           if grep -i "\[.*\/ERROR\]" server.log; then
             echo "❌ Errors found in server logs!"
             exit 1
