@@ -31,6 +31,12 @@ jobs:
           mkdir -p /opt/minecraft/server/mods
           cp -r mods/* /opt/minecraft/server/mods/
 
+      # 📂 World-Ordner vorbereiten
+      - name: 📂 Prepare World Folder
+        run: |
+          mkdir -p /opt/minecraft/server/world
+          cp -r world/* /opt/minecraft/server/world/
+
       # 🚀 Docker-Compose starten
       - name: 🚀 Start Minecraft Server with Docker Compose
         run: |
