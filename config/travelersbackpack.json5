@@ -6,7 +6,7 @@
                         // Number of upgrade slots for the tier
                         "upgradeSlotCount": 2,
                         // Number of tool slots for the tier
-                        "toolSlotCount": 2,
+                        "toolSlotCount": 4,
                         // Tank capacity per row of backpack storage, 81000 equals 1 Bucket (Leather backpack 3 rows of 9 slots = 3 * 81000
                         "tankCapacityPerRow": 81000
                 },
@@ -16,7 +16,7 @@
                         // Number of upgrade slots for the tier
                         "upgradeSlotCount": 3,
                         // Number of tool slots for the tier
-                        "toolSlotCount": 3,
+                        "toolSlotCount": 6,
                         // Tank capacity per row of backpack storage, 81000 equals 1 Bucket (Leather backpack 3 rows of 9 slots = 3 * 81000
                         "tankCapacityPerRow": 81000
                 },
@@ -26,7 +26,7 @@
                         // Number of upgrade slots for the tier
                         "upgradeSlotCount": 4,
                         // Number of tool slots for the tier
-                        "toolSlotCount": 4,
+                        "toolSlotCount": 8,
                         // Tank capacity per row of backpack storage, 81000 equals 1 Bucket (Leather backpack 3 rows of 9 slots = 3 * 81000
                         "tankCapacityPerRow": 81000
                 },
@@ -36,7 +36,7 @@
                         // Number of upgrade slots for the tier
                         "upgradeSlotCount": 5,
                         // Number of tool slots for the tier
-                        "toolSlotCount": 5,
+                        "toolSlotCount": 10,
                         // Tank capacity per row of backpack storage, 81000 equals 1 Bucket (Leather backpack 3 rows of 9 slots = 3 * 81000
                         "tankCapacityPerRow": 81000
                 },
@@ -46,7 +46,7 @@
                         // Number of upgrade slots for the tier
                         "upgradeSlotCount": 6,
                         // Number of tool slots for the tier
-                        "toolSlotCount": 6,
+                        "toolSlotCount": 12,
                         // Tank capacity per row of backpack storage, 81000 equals 1 Bucket (Leather backpack 3 rows of 9 slots = 3 * 81000
                         "tankCapacityPerRow": 81000
                 },
