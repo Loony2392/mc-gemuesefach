@@ -53,6 +53,7 @@ services:
         ferrite-core
         filament
         forge-config-api-port
+        geckolib
         infinite-trading
         invis-item-frame
         jamlib
