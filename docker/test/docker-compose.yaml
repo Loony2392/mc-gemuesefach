@@ -67,6 +67,7 @@ services:
         natures-compass
         nullscape
         ping-wheel
+        paladins-furniture
         placeholder-api
         polydecorations
         polymer
