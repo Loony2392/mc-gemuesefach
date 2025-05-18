@@ -33,6 +33,7 @@ services:
         clumps
         collective
         craterlib
+        crate-delight
         cristel-lib
         dungeons-and-taverns
         dungeons-and-taverns-stronghold-overhaul
