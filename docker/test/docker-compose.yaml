@@ -77,6 +77,7 @@ services:
         simple-voice-chat
         sit!
         storagedrawers
+        storage-delight
         tab-was-taken
         toggle-item-frames
         towns-and-towers
