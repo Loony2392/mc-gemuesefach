@@ -23,6 +23,7 @@ services:
         architectury-api
         balm
         betterwalls
+        beautify-refabricated
         bluemap
         tasty-vanilla
         builders-dream
