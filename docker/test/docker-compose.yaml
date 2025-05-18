@@ -57,6 +57,7 @@ services:
         invis-item-frame
         jamlib
         just-player-heads
+        ketkets-furnicraft
         krypton
         lithium
         luckperms
