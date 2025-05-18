@@ -69,6 +69,7 @@ services:
         more-tools
         natures-compass
         nullscape
+        otterlib
         ping-wheel
         paladins-furniture
         placeholder-api
