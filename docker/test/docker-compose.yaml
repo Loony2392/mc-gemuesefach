@@ -63,6 +63,7 @@ services:
         luckperms
         maintenancemode
         modernfix
+        moar-concrete
         morefoodmod
         more-tools
         natures-compass
